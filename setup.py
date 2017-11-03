@@ -1,3 +1,9 @@
+"""setup.py
+
+.. codeauthor:: John Lane <jlane@fanthreesixty.com>
+
+"""
+
 from setuptools import setup
 from pytest_statsd import __author__, __email__, __license__, __version__
 
@@ -10,7 +16,7 @@ setup(name='pytest-statsd',
       url=u'https://github.com/jlane9/pytest-statsd',
       packages=['pytest_statsd'],
       entry_points={'pytest11': ['statsd = pytest_statsd.plugin', ]},
-      install_requires=['pytest>=2.7', 'statsd'],
+      install_requires=['pytest>=2.7', 'statsd>=3.2.1'],
       keywords='py.test pytest statsd graphite grafana report',
       license=__license__,
       classifiers=[
@@ -25,5 +31,4 @@ setup(name='pytest-statsd',
           'Topic :: Software Development :: Libraries',
           'Topic :: Utilities',
           'Programming Language :: Python :: 2.7',
-      ]
-      )
+      ])
