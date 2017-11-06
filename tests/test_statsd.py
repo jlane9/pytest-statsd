@@ -34,7 +34,7 @@ class TestGenerateData(object):
     def test_expected_failure(self):
 
         i = 1 / 0
-        print i
+        print(i)
 
     @pytest.mark.xfail()
     def test_unexpected_pass(self):
