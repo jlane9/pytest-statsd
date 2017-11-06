@@ -1,0 +1,22 @@
+language: python
+python:
+  - "2.7"
+  - "3.6"
+sudo: required
+services:
+  - docker
+# command to install dependencies
+before_install:
+  - docker pull hopsoft/graphite-statsd
+  - docker run -d --name graphite --restart=always -p 80:80 -p 2003-2004:2003-2004 -p 2023-2024:2023-2024 -p 8125:8125/udp -p 8126:8126 hopsoft/graphite-statsd
+  - docker ps -a
+install:
+  - pip install -e .
+  - pip install -r requirements.txt
+before_script:
+  - pytest -m generate --stats-d || true
+  - pytest -m pass_only --stats-d
+  - pytest -m fail_only --stats-d || true
+# command to run tests
+script:
+  - pytest -m statsd --stats-d
