@@ -1,3 +1,4 @@
+from numbers import Number
 import os
 from random import choice
 import time
@@ -58,7 +59,7 @@ class TestStatsD(object):
             pytest.fail("%s return status code %i" % (r.url, r.status_code))
 
         json = r.json()
-        return [point[0] for point in json[0]['datapoints'] if isinstance(point[0], (int, float, long))] if json else []
+        return [point[0] for point in json[0]['datapoints'] if isinstance(point[0], Number)] if json else []
 
     @pytest.mark.parametrize('data_point', (
             'stats.gauges.passed',
