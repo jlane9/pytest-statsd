@@ -13,10 +13,9 @@ before_install:
 install:
   - pip install -e .
   - pip install -r requirements.txt
-before_script:
+# command to run tests
+script:
   - pytest -m generate --stats-d || true
   - pytest -m pass_only --stats-d
   - pytest -m fail_only --stats-d || true
-# command to run tests
-script:
   - pytest -m statsd
