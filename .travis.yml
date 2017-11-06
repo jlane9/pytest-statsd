@@ -19,4 +19,4 @@ before_script:
   - pytest -m fail_only --stats-d || true
 # command to run tests
 script:
-  - pytest -m statsd --stats-d
+  - pytest -m statsd
