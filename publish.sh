@@ -30,7 +30,7 @@ fi
 if [ "$RESULT" -eq 0 ]
 then
     # Get new version
-    VERSION=$(grep -oEi "[0-9]+\.[0-9]+\.[0-9]+" pytest_needle/__init__.py)
+    VERSION=$(grep -oEi "[0-9]+\.[0-9]+\.[0-9]+" pytest_statsd/__init__.py)
 
     # Release new version
     git push --tags origin master
