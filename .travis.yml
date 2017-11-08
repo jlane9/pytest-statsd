@@ -18,4 +18,5 @@ script:
   - pytest -m generate --stats-d || true
   - pytest -m pass_only --stats-d
   - pytest -m fail_only --stats-d || true
+  - sleep 90
   - pytest -m statsd
