@@ -95,5 +95,5 @@ class TestStatsD(object):
         if not data:
             pytest.fail('Nothing returned for %s' % data_point)
 
-        if min(data) == max(data):
+        if max(data) in (0, None, ''):
             pytest.fail('%s did not increment %i' % (data_point, max(data)))
