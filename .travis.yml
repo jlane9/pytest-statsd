@@ -15,9 +15,9 @@ install:
   - pip install -r requirements.txt
 # command to run tests
 script:
-  - pytest -m generate --stats-d || true
   - pytest -m pass_only --stats-d
   - pytest -m expected_fail --stats-d
   - pytest -m fail_only --stats-d || true
-  - sleep 90
+  - pytest -m generate --stats-d || true
+  - sleep 120
   - pytest -m statsd
