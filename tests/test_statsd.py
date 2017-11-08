@@ -25,12 +25,16 @@ class TestGenerateData(object):
     def test_failed(self):
         pytest.fail('Failed test')
 
+    def test_fail_without_stacktrace(self):
+        pytest.fail('Failure without stacktrace', False)
+
     def test_skipped(self):
         pytest.skip('Skipped test')
 
     def test_error(self, dummy):
         assert dummy == 2
 
+    @pytest.mark.expected_fail
     @pytest.mark.xfail(raises=ZeroDivisionError)
     def test_expected_failure(self):
 
@@ -50,6 +54,11 @@ class TestStatsD(object):
     pytestmark = [pytest.mark.statsd]
 
     def get_data(self, target):
+        """Gather data from graphite for data point
+
+        :param str target: Graphite data point namespace
+        :return:
+        """
 
         assert isinstance(target, str)
 
