@@ -1,7 +1,9 @@
 bumpversion>=0.5.0
-pytest>=3.0.0,<4.0.0
+pytest>=3.0.0,<5.0.0
+pytest-cov>=2.6.0
+pytest-pep8>=1.0.0
 requests>=2.18.4,<3.0.0
-sphinx>=1.6.5
+sphinx>=1.8.0
 sphinx-autobuild>=0.7.0
-sphinx-rtd-theme>=0.2.4
+sphinx-rtd-theme>=0.4.2
 statsd>=3.2.1
