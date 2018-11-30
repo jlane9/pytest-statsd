@@ -47,6 +47,7 @@ setup(name='pytest-statsd',
               "Sphinx>=1.8.0",
               "sphinx-autobuild>=0.7.0",
               "sphinx-rtd-theme>=0.4.2",
+              "twine>=1.12.0"
           ]
       },
       classifiers=[
