@@ -1,5 +1,5 @@
 bumpversion>=0.5.0
-pytest>=3.0.0,<5.0.0
+pytest==7.4.1
 pytest-cov>=2.6.0
 pytest-pep8>=1.0.0
 requests>=2.18.4,<3.0.0
